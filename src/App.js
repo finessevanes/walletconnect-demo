@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { ConnectButton, useAccount } from '@web3modal/react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { connected, address } = useAccount()
+  console.log('address', address)
+
+  return connected ? (
+    <>
+      <h1>{address ? address : 'none'} </h1>
+    </>
+  ) : (
+    <ConnectButton />
+  )
 }
 
 export default App;
