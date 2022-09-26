@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 
 const { REACT_APP_PROJECT_ID } = process.env
+console.log('REACT_APP_PROJECT_ID', REACT_APP_PROJECT_ID)
 const config = {
   projectId: REACT_APP_PROJECT_ID,
   theme: "dark",
